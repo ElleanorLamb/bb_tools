@@ -6,6 +6,13 @@ import math
 from matplotlib import pyplot as plt 
 pi = math.pi
 
+''' 
+Conversion from mathematica to python of a calculation of the bb tune shift for both HO and LR. The paper on the 2D bessel Hamiltonian for
+calculation of the tune shift can be found at https://inspirehep.net/files/87902e1952e527807c678769244a876d. 
+'''
+
+
+
 # params 
 dx = 0.s
 dy = 0.
