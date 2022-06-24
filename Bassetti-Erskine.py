@@ -18,7 +18,7 @@ r_p = q*q/(4*np.pi*eps0*c*c*m_p) # proton radius
 # BASSETTI-ERSKINE
 
 
-sig_x = np.sqrt(1.001e-10) # converting between sigma and epsilon x... 
+sig_x = np.sqrt(1.001e-10) 
 sig_y = np.sqrt(1e-10)
 
 
