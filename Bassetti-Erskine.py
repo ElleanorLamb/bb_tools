@@ -15,7 +15,7 @@ gamma=6800/0.938
 beta = np.sqrt(1-1/gamma**2)
 r_p = q*q/(4*np.pi*eps0*c*c*m_p) # proton radius
 
-# BESSETTI-ERSKINE
+# BASSETTI-ERSKINE
 
 
 sig_x = np.sqrt(1.001e-10) # converting between sigma and epsilon x... 
