@@ -15,22 +15,24 @@ gamma = 7000
 be.bassetti_erskine_kick(x, y, N, sig_x, sig_y, gamma)
 
 # %%
-my_x = np.linspace(-5*sig_x,5*sig_x)
+x_samples = np.linspace(-5*sig_x,5*sig_x)
 
-# TODO: label it
-my_fun = np.vectorize(lambda x: np.imag(be.bassetti_erskine_kick(x, y, N, sig_x, sig_y, gamma)))
-plt.plot(my_x, my_fun(my_x))
+# Calculate the BE kick
+BE_kick_imag = np.vectorize(lambda x: np.imag(be.bassetti_erskine_kick(x, y, N, sig_x, sig_y, gamma)))
+plt.plot(x_samples, BE_kick_imag(x_samples))
 
-
-my_fun = np.vectorize(lambda x: np.imag(be.round_gaussian_kick(x, y, N, sig_x, gamma)))
-plt.plot(my_x, my_fun(my_x), 'or')
+# Calculate the round beam kick 
+RB_kick = np.vectorize(lambda x: np.imag(be.round_gaussian_kick(x, y, N, sig_x, gamma))) # shouldnt be imaginary? 
+plt.plot(x_samples, RB_kick(x_samples), 'or')
 
 # %%
-# TODO: label it
-my_fun = np.vectorize(lambda x: np.real(be.bassetti_erskine_kick(x, y, N, sig_x, sig_y, gamma)))
-plt.plot(my_x, my_fun(my_x))
+# Calculate BE kick 
+BE_kick_real = np.vectorize(lambda x: np.real(be.bassetti_erskine_kick(x, y, N, sig_x, sig_y, gamma)))
+plt.plot(x_samples, BE_kick_real(my_x))
 
-my_fun = np.vectorize(lambda x: np.real(be.round_gaussian_kick(x, y, N, sig_x, gamma)))
-plt.plot(my_x, my_fun(my_x), 'or')
+
+# Calculate the RB kick
+RB_kick = np.vectorize(lambda x: np.real(be.round_gaussian_kick(x, y, N, sig_x, gamma)))
+plt.plot(x_samples, RB_kick(x_samples), 'or') 
 
 # %%
